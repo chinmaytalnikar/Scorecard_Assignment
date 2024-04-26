@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra Institute of Technology, Pune - Student Info Form (Year 2023-2024)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #f7fafc; font-family: 'Roboto', sans-serif;">
+    <div class="container" style="background-color: #b5e1f8; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; width:100% ; max-width: 1300px; margin: auto ; align-self:center; ">
+        <header style="text-align: center; margin-bottom: 20px;">
+            <img src="logo.png" alt="MIT Logo" style="width: 150px; height: auto; margin-bottom: 20px;">
+            <h1 style="color: #333; font-size: 32px; font-weight: bold;">Maharashtra Institute of Technology, Pune</h1>
+            <h2 style="color: #666; font-size: 24px; font-weight: bold;">Student Info Form (2023-2024)</h2>
+        </header>
+        <main>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="fullName"><b>Full Name:</b></label>
+                    <input type="text" id="fullName" name="fullName" pattern="[A-Za-z ]{1,50}" required>
+                </div>
+                <div class="form-group">
+                    <label for="rollNumber"><b>Roll Number:</b></label>
+                    <input type="text" id="rollNumber" name="rollNumber" pattern="[A-Z]{4}[0-9]{4}[A-Z]{1}" required>
+                </div>
+                <!-- Hidden input fields to store student's name and roll number -->
+                <input type="hidden" id="studentName" name="studentName">
+                <input type="hidden" id="rollNo" name="rollNo">
+
+                <div id="subjects">
+                    <div class="subject-row">
+                        <div class="form-group">
+                            <label for="subject"><b>Subject:</b></label>
+                            <input type="text" class="subject" name="subject" pattern="[A-Za-z]+" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="outOf"><b>Out of:</b></label>
+                            <select name="outOf" class="outOf" required>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="marksObtained"><b>Obtained Marks:</b></label>
+                            <input type="number" class="marksObtained" name="marksObtained" min="0" required>
+                        </div>
+                        <button type="button" class="removeBtn">Remove Subject</button>
+                    </div>
+                </div>
+                <button type="button" id="addSubjectBtn">Add More Subject</button>
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

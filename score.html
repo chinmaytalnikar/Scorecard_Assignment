@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra Institute of Technology, Pune - Scorecard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #studentInfo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #studentInfo p {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .failed {
+            background-color: #ffd8cc; /* Light red */
+        }
+    </style>
+</head>
+<body style="font-family: 'Roboto', sans-serif;">
+    <div class="container" style="background-color: #b5e6f8; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; width:100% ; max-width: 1500px; margin: 1% ;" >
+        <header style="text-align: center; margin-bottom: 20px;">
+            <img src="logo.png" alt="MIT Logo" style="width: 150px; height: auto; margin-bottom: 20px;">
+            <h1 style="color: #333; font-size: 32px; font-weight: bold;">Maharashtra Institute of Technology, Pune - Scorecard</h1>
+        </header>
+        <main>
+            <div id="studentInfo" style="text-align: center; font-family: 'Josefin Sans'; font-size: 25px; font-weight: bold; margin-bottom: 20px;"></div>
+               
+            </div>
+            <table id="scorecardTable" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Subject</th>
+                        <th>Maximum Marks</th>
+                        <th>Marks Obtained</th>
+                        <th>Percentage</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="scorecardBody">
+                    <!-- Scorecard data will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <div id="remarks" style="text-align: center; font-size: 18px; font-weight: bold;"></div>
+        </main>
+    </div>
+    <script src="script_score.js"></script>
+    <script>
+        const queryParams = new URLSearchParams(window.location.search);
+        const studentName = queryParams.get('studentName') || 'Unknown';
+        const rollNumber = queryParams.get('rollNumber') || 'Unknown';
+
+        // Display student name and roll number
+        document.getElementById('studentName').textContent = `Student Name: ${studentName}`;
+        document.getElementById('rollNumber').textContent = `Roll Number: ${rollNumber}`;
+    </script>
+</body>
+</html>
+
